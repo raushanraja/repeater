@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: nord --default, dracula --prefersdark, cupcake, dracula;
+}
+
+@plugin "@tailwindcss/typography" {}
+
+
+
+.responseai {
+    font-family: 'Roboto', sans-serif;
+    text-justify: newspaper;
+    text-align: justify;
+    max-width: 800px;
+    line-height: 1.8;
+
+    * kbd,
+    pre,
+    code {
+        @apply bg-gray-700;
+        @apply p-1;
+        @apply rounded;
+    }
+
+
+    * p {
+        @apply pb-4;
+    }
+
+    * ul {
+        @apply list-disc list-inside;
+        @apply mb-4;
+    }
+
+    * ol {
+        @apply list-decimal list-inside;
+    }
+
+    * li {
+        @apply ml-4;
+    }
+
+
+    * h2 {
+        @apply pb-2;
+        @apply font-semibold;
+    }
+
+    * h3 {
+        @apply font-medium;
+    }
+
+    * h2::before {
+        content: "##";
+        @apply pr-2;
+    }
+
+
+    * h3::before {
+        content: "###";
+        @apply pr-2;
+    }
+
+}
