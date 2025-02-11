@@ -1,0 +1,9 @@
+networks:
+  reverse_proxy:
+    external: true
+
+services:
+  repeaterweb:
+    image: nginx:latest
+    volumes:
+      - ./dist:/usr/share/nginx/html
