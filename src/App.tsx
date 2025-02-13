@@ -19,6 +19,20 @@ const TabGrid: Component = () => {
 
     return (
         <div class='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+            <div
+                class='p-6 btn btn-outline'
+                onClick={() => {
+                    const random = Math.floor(Math.random() * titles().length);
+                    const name = titles()[random];
+                    navigate(
+                        `/practice/${name.toLowerCase().replaceAll(' ', '')}`,
+                        {
+                            state: { name: name },
+                        }
+                    );
+                }}>
+                Pick a random problem
+            </div>
             {titles().map((name) => (
                 <div
                     class='p-6 btn btn-outline'
@@ -106,16 +120,6 @@ const App: ParentComponent = (props) => {
             <AddModal />
             <Navbar />
             {props.children}
-        </div>
-    );
-};
-
-const NextPage: Component = () => {
-    const params = useParams();
-    return (
-        <div>
-            <h1>{params.item}</h1>
-            <p>Details about {params.item}</p>
         </div>
     );
 };
