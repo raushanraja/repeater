@@ -7,3 +7,5 @@ services:
     image: nginx:latest
     volumes:
       - ./dist:/usr/share/nginx/html
+    networks:
+        - reverse_proxy
