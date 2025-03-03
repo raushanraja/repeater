@@ -19,7 +19,7 @@ const TabGrid: Component = () => {
 
     return (
         <div class='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-            <div
+            <button
                 class='p-6 btn btn-outline'
                 onClick={() => {
                     const random = Math.floor(Math.random() * titles().length);
@@ -32,9 +32,9 @@ const TabGrid: Component = () => {
                     );
                 }}>
                 Pick a random problem
-            </div>
+            </button>
             {titles().map((name) => (
-                <div
+                <button
                     class='p-6 btn btn-outline'
                     onClick={() =>
                         navigate(
@@ -45,7 +45,7 @@ const TabGrid: Component = () => {
                         )
                     }>
                     {name}
-                </div>
+                </button>
             ))}
         </div>
     );
