@@ -3,6 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+    base: '/repeater',
     plugins: [tailwindcss(), solidPlugin()],
     server: {
         port: 3300,
